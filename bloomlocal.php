@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Bloomlocal
  * Plugin URI: https://bloomlocal.net/
- * Description: Bloomlocal: Filter WooCommerce orders by delivery date
+ * Description: Bloomlocal
  * Version: 0.1
  * Author: Randolph Roble
  * Author URI: https://github.com/rroble
