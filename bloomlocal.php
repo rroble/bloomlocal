@@ -3,7 +3,7 @@
  * Plugin Name: Bloomlocal
  * Plugin URI: https://bloomlocal.net/
  * Description: Bloomlocal
- * Version: 0.1
+ * Version: 0.1.1
  * Author: Randolph Roble
  * Author URI: https://github.com/rroble
  * Text Domain: bloomlocal
