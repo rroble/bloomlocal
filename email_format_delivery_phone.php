@@ -5,7 +5,7 @@ $shipping_phone = null;
 
 // Capture the shipping phone when email is being prepared
 add_filter('woocommerce_email_order_meta_fields', function ($fields, $sent_to_admin, $order) use (&$shipping_phone) {
-    if ($filter && isset($fields['shipping_phone'])) {
+    if (isset($fields['shipping_phone'])) {
         $shipping_phone = $fields['shipping_phone']['value'];
         unset($fields['shipping_phone']);
     }
