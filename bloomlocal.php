@@ -23,5 +23,5 @@ require_once __DIR__ . '/email_format_delivery_phone.php';
 require_once __DIR__ . '/updater.php';
 
 add_action('init', function() {
-    Bloomlocal_Plugin::init(BLOOMLOCAL_PLUGIN_VERSION, plugin_basename(__FILE__));
+    Bloomlocal_Updater::init(BLOOMLOCAL_PLUGIN_VERSION, plugin_basename(__FILE__));
 });

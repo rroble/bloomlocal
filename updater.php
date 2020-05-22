@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Bloomlocal_Plugin {
+class Bloomlocal_Updater {
 
     protected $current_version;
     protected $plugin_slug;
