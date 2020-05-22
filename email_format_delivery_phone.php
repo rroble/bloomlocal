@@ -1,5 +1,10 @@
 <?php
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // This field is provided by the plugin: Checkout Field Editor for WooCommerce
 $shipping_phone = null;
 
