@@ -16,7 +16,7 @@ $obj = new stdClass();
 $obj->slug = 'bloomlocal';  
 $obj->name = 'Bloomlocal';
 $obj->plugin_name = 'bloomlocal.php';
-$obj->new_version = '0.1.2';
+$obj->new_version = '0.1.3';
 
 // the url for the plugin homepage
 $obj->url = 'http://bloomlocal.net';
