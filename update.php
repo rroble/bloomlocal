@@ -34,7 +34,7 @@ case 'info':
 	$obj->tested = '5.4.1';  
 	$obj->last_updated = '2020-05-22';  
 	$obj->sections = array(  
-		'description' => 'The new version of the Bloomlocal plugin',  
+		'description' => 'Latest version <a href="https://github.com/rroble/bloomlocal/releases/latest">here.</a>',  
 	);
 	$obj->download_link = $obj->package;  
 	echo serialize($obj);  
