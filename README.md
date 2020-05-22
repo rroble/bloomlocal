@@ -2,6 +2,7 @@
 
 - [x] WooCommerce: Filter orders by delivery date
 - [x] Order email: Shipping phone to be put in the delivery address
+- [x] Update plugin
 - [ ] Checkout: Address validation plugin
 - [ ] Checkout: Order required fields validation
 - [ ] Admin: Addon order wrong date
@@ -9,4 +10,4 @@
 - [ ] Google reviews plugin
 
 ## Download
- [Latest](https://github.com/rroble/bloomlocal/releases/download/v0.1.1/bloomlocal-0.1.1.zip)
+https://github.com/rroble/bloomlocal/releases/latest
