@@ -16,7 +16,7 @@ $obj = new stdClass();
 $obj->slug = 'bloomlocal';  
 $obj->name = 'Bloomlocal';
 $obj->plugin_name = 'bloomlocal.php';
-$obj->new_version = '0.1.3';
+$obj->new_version = getVersion('0.1.3');
 
 // the url for the plugin homepage
 $obj->url = 'http://bloomlocal.net';
@@ -30,9 +30,8 @@ case 'version':
 	echo serialize( $obj );
 	break;  
 case 'info':   
-	$obj->requires = '5.4';  
-	$obj->tested = '5.4';  
-	$obj->downloaded = 12540;  
+	$obj->requires = '5.4.1';  
+	$obj->tested = '5.4.1';  
 	$obj->last_updated = '2020-05-22';  
 	$obj->sections = array(  
 		'description' => 'The new version of the Bloomlocal plugin',  
@@ -42,4 +41,20 @@ case 'info':
 case 'license':  
 	echo serialize( $obj );  
 	break;  
+}
+
+function getVersion($default = '0.1.3') {
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, 'https://github.com/rroble/bloomlocal/releases/latest');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$output = curl_exec($ch); 
+	$tag = explode('tag/v', $output);
+	if (isset($tag[1])) {
+		$vers = explode('"', $tag[1]);
+		if (isset($vers[0])) {
+			return $vers[0];
+		}
+	}
+
+	return $default;
 }
