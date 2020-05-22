@@ -82,7 +82,7 @@ class Bloomlocal_Updater {
         if (isset($tag[1])) {
             $vers = explode('"', $tag[1]);
             if (isset($vers[0])) {
-                set_transient($this->transient_key, $vers[0], 43200); // 12 hours cache
+                set_transient($this->transient_key, $vers[0], 10800);
                 return $vers[0];
             }
         }
