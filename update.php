@@ -30,11 +30,11 @@ case 'version':
 	echo serialize( $obj );
 	break;  
 case 'info':   
-	$obj->requires = '5.4.1';  
-	$obj->tested = '5.4.1';  
+	$obj->requires = '5.4';  
+	$obj->tested = '5.4';  
 	$obj->last_updated = '2020-05-22';  
 	$obj->sections = array(  
-		'description' => 'Latest version <a href="https://github.com/rroble/bloomlocal/releases/latest">here.</a>',  
+		'description' => sprintf('Latest version <a href="https://github.com/rroble/bloomlocal/releases/latest">%s</a>', $obj->new_version),
 	);
 	$obj->download_link = $obj->package;  
 	echo serialize($obj);  
