@@ -2,7 +2,7 @@
 
 - [x] WooCommerce: Filter orders by delivery date
 - [x] Order email: Shipping phone to be put in the delivery address
-- [x] Update plugin
+- [x] Plugin self-update
 - [ ] Checkout: Address validation plugin
 - [ ] Checkout: Order required fields validation
 - [ ] Admin: Addon order wrong date
