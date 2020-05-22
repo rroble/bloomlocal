@@ -22,7 +22,7 @@ $obj->new_version = '0.1.2';
 $obj->url = 'http://bloomlocal.net';
 
 //the download location for the plugin zip file (can be any internet host)
-$obj->package = sprintf('https://arcanys:FvoneOJHEO@bloomlocal.net/dev/bloomlocal-%s.zip', $obj->new_version);
+$obj->package = sprintf('https://github.com/rroble/bloomlocal/releases/download/v%s/bloomlocal-%s.zip', $obj->new_version, $obj->new_version);
 
 switch ( $_POST['action'] ) {
 
@@ -30,14 +30,12 @@ case 'version':
 	echo serialize( $obj );
 	break;  
 case 'info':   
-	$obj->requires = '4.0';  
-	$obj->tested = '4.0';  
+	$obj->requires = '5.4';  
+	$obj->tested = '5.4';  
 	$obj->downloaded = 12540;  
-	$obj->last_updated = '2012-10-17';  
+	$obj->last_updated = '2020-05-22';  
 	$obj->sections = array(  
 		'description' => 'The new version of the Bloomlocal plugin',  
-		'another_section' => '',  
-		'changelog' => 'Updates'  
 	);
 	$obj->download_link = $obj->package;  
 	echo serialize($obj);  
