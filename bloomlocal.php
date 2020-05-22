@@ -3,7 +3,7 @@
  * Plugin Name: Bloomlocal
  * Plugin URI: https://bloomlocal.net/
  * Description: Bloomlocal
- * Version: 0.1.4
+ * Version: 0.1.5
  * Author: Randolph Roble
  * Author URI: https://github.com/rroble
  * Text Domain: bloomlocal
@@ -16,16 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+define('BLOOMLOCAL_PLUGIN_VERSION', '0.1.5');
+
 require_once __DIR__ . '/admin_filter_orders_by_delivery_date.php';
 require_once __DIR__ . '/email_format_delivery_phone.php';
-require_once __DIR__ . '/wp_autoupdate.php';
+require_once __DIR__ . '/updater.php';
 
 add_action('init', function() {
-    new wp_autoupdate(
-        '0.1.4',
-        'https://arcanys:FvoneOJHEO@bloomlocal.net/dev/update.php',
-        plugin_basename(__FILE__),
-        'rroble',
-        'MIT'
-    );
+    bl_check_update(BLOOMLOCAL_PLUGIN_VERSION, plugin_basename(__FILE__));
 });
