@@ -8,6 +8,7 @@
 - [ ] Admin: Addon order wrong date
 - [ ] Print an order pay in one A4 sheet
 - [ ] Google reviews plugin
+- [x] Fix cart for multiple orders
 
 ## Download
 https://github.com/rroble/bloomlocal/releases/latest
