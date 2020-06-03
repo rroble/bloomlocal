@@ -9,6 +9,7 @@
 - [ ] Print an order pay in one A4 sheet
 - [ ] Google reviews plugin
 - [x] Fix cart for multiple orders
+- [ ] One-click export orders by delivery date (today)
 
 ## Download
 https://github.com/rroble/bloomlocal/releases/latest
