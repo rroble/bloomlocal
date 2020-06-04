@@ -2,10 +2,10 @@
 /**
  * Plugin Name: Bloomlocal
  * Plugin URI: https://bloomlocal.net/
- * Description: Bloomlocal
+ * Description: Various WooCommerce enhancements for florists websites.
  * Version: 0.1.9
- * Author: Randolph Roble
- * Author URI: https://github.com/rroble
+ * Author: Arcanys
+ * Author URI: https://arcanys.com/
  * Text Domain: bloomlocal
  *
  * @package Bloomlocal
