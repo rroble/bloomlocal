@@ -8,7 +8,9 @@ add_filter('option_woocommerce-order-export-now', function ($options) {
     $options['sort'] = 'order_id';
     $options['all_products_from_order'] = 1;
     $options['skip_refunded_items'] = 1;
-    // $options['export_matched_items'] = 1;
+    $options['from_date'] = '';
+    $options['to_date'] = '';
+    $options['export_filename'] = 'orders-%y-%m-%d-%h-%i-%s.pdf';
     $options['duplicated_fields_settings'] = array(
         'products' => array(
             'repeat' => 'rows',
@@ -44,7 +46,7 @@ add_filter('option_woocommerce-order-export-now', function ($options) {
             'key' => 'plain_products_Delivery Date',
             'label' => 'Delivery Date',
             'format' => 'undefined',
-            'colname' => 'Date',
+            'colname' => 'Delivery Date',
         ),
         array(
             'segment' => 'products',
@@ -95,6 +97,13 @@ add_filter('option_woocommerce-order-export-now', function ($options) {
             'format' => 'string',
             'colname' => 'City, State, Zip',
         ),
+        // array(
+        //     'segment' => 'products',
+        //     'key' => 'plain_products_Your Card Message',
+        //     'label' => 'Your Card Message',
+        //     'format' => 'undefined',
+        //     'colname' => 'Message',
+        // ),
     );
 
     return $options;
