@@ -64,8 +64,8 @@ class Bloomlocal_Updater {
 
     protected function get_info() {
         $this->info->new_version = $this->get_new_version();
-        $this->info->package = sprintf('https://github.com/rroble/bloomlocal/releases/download/v%s/bloomlocal-%s.zip',
-                                $this->info->new_version, $this->info->new_version);
+        $this->info->package = sprintf('https://github.com/rroble/bloomlocal/releases/download/v%s/bloomlocal-latest.zip',
+                                $this->info->new_version);
         return $this->info;
     }
 
