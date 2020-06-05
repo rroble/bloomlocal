@@ -46,7 +46,7 @@ class Bloomlocal_Updater {
     }
 
     public function check_info($info, $action, $arg) {
-        if (($action == 'query_plugins' || $action == 'plugin_information') && isset($arg->slug) && $arg->slug === $slug) {
+        if (($action == 'query_plugins' || $action == 'plugin_information') && isset($arg->slug) && $arg->slug === $this->slug) {
             $obj = $this->get_info();
             $obj->requires = '5.4';
             $obj->tested = '5.4';
