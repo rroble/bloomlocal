@@ -40,13 +40,31 @@ add_filter('posts_clauses', function ($args, $wp_query) {
 
         return (float) $value;
     };
+    $GLOBALS['filter_price_min'] = $get_value('wc_product_meta_lookup.min_price >= ');
+    $GLOBALS['filter_price_max'] = $get_value('wc_product_meta_lookup.max_price <= ');
 
     $args['where'] .= $wpdb->prepare(
         " AND $wpdb->postmeta.meta_value BETWEEN %f AND %f",
-        $get_value('wc_product_meta_lookup.min_price >= '),
-        $get_value('wc_product_meta_lookup.max_price <= ')
+        $GLOBALS['filter_price_min'],
+        $GLOBALS['filter_price_max']
     );
 
     return $args;
 
 }, 20, 2);
+
+add_filter('woocommerce_variation_prices', function ($prices, $product, $for_display) {
+    if (!$GLOBALS['filter_price_min'] || !$GLOBALS['filter_price_max']) {
+        return $prices;
+    }
+
+    foreach ( $prices as $price_key => $variation_prices ) {
+        foreach ($variation_prices as $var_key => $price) {
+            if ($price < $GLOBALS['filter_price_min'] || $price > $GLOBALS['filter_price_max']) {
+                unset($prices[$price_key][$var_key]);
+            }
+        }
+    }
+
+    return $prices;
+}, 20, 3);
