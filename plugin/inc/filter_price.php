@@ -8,8 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Bloomlocal_Price_Filter {
     private static $min_price = null;
     private static $max_price = null;
-    private static $search_range = true; // false min_value only
+    private static $search_variation_price = true; // false min_value only
 
+    /**
+     * Price filter.
+     * Modify wc filter query because it su.. not working.
+     */
     public static function apply($args, $wp_query) {
         global $wpdb;
 
@@ -40,7 +44,7 @@ final class Bloomlocal_Price_Filter {
             $args['join'] .= " LEFT JOIN {$wpdb->wc_product_meta_lookup} wc_product_meta_lookup ON $wpdb->posts.ID = wc_product_meta_lookup.product_id ";
         }
 
-        if (static::$search_range) {
+        if (static::$search_variation_price) {
             if ( ! strstr( $args['join'], $wpdb->postmeta ) ) {
                 $args['join'] .= " LEFT JOIN {$wpdb->postmeta} ON ($wpdb->posts.ID = $wpdb->postmeta.post_id AND $wpdb->postmeta.meta_key = '_price') ";
             }
@@ -63,6 +67,10 @@ final class Bloomlocal_Price_Filter {
         return $args;
     }
 
+    /**
+     * Helper.
+     * Find the value between the $marker and the next space character.
+     */
     private static function get_value($marker, $where) {
         $left = strpos($where, $marker);
         $right = strpos($where, ' ', $left + strlen($marker));
@@ -75,6 +83,11 @@ final class Bloomlocal_Price_Filter {
         return (float) $value;
     }
 
+    /**
+     * More products.
+     * When more products is requested via ajax, the price filters are missing.
+     * Retrieve it in the referer.
+     */
     public static function paginate() {
         if (empty($_SERVER['HTTP_REFERER'])) {
             return;
@@ -106,6 +119,10 @@ final class Bloomlocal_Price_Filter {
         }
     }
 
+    /**
+     * Display price.
+     * Show the first price that matches the price range filter.
+     */
     public static function price($prices, $product, $for_display) {
         if (!static::$min_price || !static::$max_price) {
             return $prices;
@@ -121,8 +138,52 @@ final class Bloomlocal_Price_Filter {
 
         return $prices;
     }
+
+    /**
+     * Product link.
+     * Make the displayed price the default selected size in the product page.
+     */
+    public static function size($link, $post, $leavename, $sample) {
+        if ($post->post_type != 'product' || (!static::$min_price && !static::$max_price)) {
+            return $link;
+        }
+
+        $product = wc_get_product($post);
+        if (!method_exists($product, 'get_available_variations')) {
+            return $link;
+        }
+
+        $size = null;
+        $vars = array();
+        foreach ($product->get_available_variations() as $var) {
+            if ($var['display_price'] < static::$min_price || $var['display_price'] > static::$max_price) {
+                continue;
+            }
+            if (isset($var['attributes']['attribute_pa_select-size'])) {
+                $vars[$var['attributes']['attribute_pa_select-size']] = true;
+            }
+        }
+        $attrs = current($product->get_variation_attributes());
+        foreach ($attrs as $var_index => $var_key) {
+            if (!isset($vars[$var_key])) continue;
+            $size = $var_index > 0 ? $var_key : null;
+            break;
+        }
+        unset($product, $vars, $attrs);
+
+        if (!$size) {
+            return $link;
+        }
+
+        if (strpos($link, '?') !== false) {
+            return $link . '&attribute_pa_select-size=' . $size;
+        }
+
+        return $link . '?attribute_pa_select-size=' . $size;
+    }
 }
 
 add_filter('posts_clauses', array('Bloomlocal_Price_Filter', 'apply'), 20, 2);
-add_filter('woocommerce_variation_prices', array('Bloomlocal_Price_Filter', 'price'), 20, 30);
+add_filter('woocommerce_variation_prices', array('Bloomlocal_Price_Filter', 'price'), 20, 3);
+add_filter('post_type_link', array('Bloomlocal_Price_Filter', 'size'), 20, 4);
 add_action('astra_shop_pagination_infinite', array('Bloomlocal_Price_Filter', 'paginate'), 20);
