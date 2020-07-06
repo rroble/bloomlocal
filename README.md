@@ -11,6 +11,7 @@
 - [x] Fix cart for multiple orders
 - [ ] One-click export orders by delivery date (today)
 - [x] Products list: price filter not working
+- [x] Same-day delivery cutoff
 
 ## Download
 https://github.com/rroble/bloomlocal/releases/latest
