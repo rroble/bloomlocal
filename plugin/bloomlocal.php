@@ -22,6 +22,7 @@ require_once __DIR__ . '/inc/admin_filter_orders_by_delivery_date.php';
 require_once __DIR__ . '/inc/email_format_delivery_phone.php';
 require_once __DIR__ . '/inc/cart.php';
 require_once __DIR__ . '/inc/filter_price.php';
+require_once __DIR__ . '/inc/store_hours.php';
 require_once __DIR__ . '/inc/same_day_delivery.php';
 // require_once __DIR__ . '/inc/export_orders.php';
 

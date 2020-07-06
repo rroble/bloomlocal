@@ -19,11 +19,14 @@ add_action('woocommerce_checkout_process', function () {
         }
 
         // Cut off 11am Same-Day Delivery
+        $day_key = 'st_'.strtolower(date('l'));
+        $cutoffValue = get_option($day_key, 13);
         $cutoff = clone $now;
-        $cutoff->setTime(11, 0);
+        $cutoff->setTime($cutoffValue, 0);
 
         if ($now->getTimestamp() > $cutoff->getTimestamp()) {
-            throw new Exception("<strong>Cut off 11am Same-Day Delivery</strong> Please change delivery date.");
+            $showCutoff = bloomlocal_to_human_hours($cutoffValue);
+            throw new Exception("<strong>Cut off $showCutoff Same-Day Delivery</strong> Please change delivery date.");
         }
     };
 
