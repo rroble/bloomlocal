@@ -6,6 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 add_action('woocommerce_checkout_process', function () {
+    if (!($enabled = get_option('st_enable', false)) || $enabled == 'no') {
+        return;
+    }
 
     $check_same_day_cutoff = function ($date) {
         $tz = new DateTimeZone('Europe/London');

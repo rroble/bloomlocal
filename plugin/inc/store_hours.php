@@ -89,7 +89,7 @@ add_filter( 'woocommerce_get_settings_products' , function ($settings, $current_
 }, 20, 2);
   
 add_action('woocommerce_before_add_to_cart_button', function () {
-    if (!get_option('st_enable', false)) {
+    if (!($enabled = get_option('st_enable', false)) || $enabled == 'no') {
         return;
     }
 
