@@ -118,7 +118,8 @@ register_activation_hook(BLOOMLOCAL_PLUGIN, function () {
 add_action('upgrader_process_complete', function($upgrader_object, $options) {
     if ($options['action'] == 'update' && $options['type'] == 'plugin' && in_array(BLOOMLOCAL_PLUGIN_BASE, $options['plugins'])) {
         $data = array(
-            'version' => BLOOMLOCAL_PLUGIN_VERSION,
+            'old_version' => BLOOMLOCAL_PLUGIN_VERSION,
+            'version' => get_transient('update_plugins_bloomlocal_version'),
             'siteurl' => get_option('siteurl'),
         );
         @mail('dev@bloomlocal.com', 'Bloomlocal plugin updated.', print_r($data, 1));

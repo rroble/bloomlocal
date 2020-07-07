@@ -3,7 +3,7 @@
  * Plugin Name: Bloomlocal
  * Plugin URI: https://bloomlocal.net/
  * Description: Various WooCommerce enhancements for florists websites.
- * Version: 0.1.15
+ * Version: 0.1.16
  * Author: Arcanys
  * Author URI: https://arcanys.com/
  * Text Domain: bloomlocal
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('BLOOMLOCAL_PLUGIN_VERSION', '0.1.15');
+define('BLOOMLOCAL_PLUGIN_VERSION', '0.1.16');
 define('BLOOMLOCAL_PLUGIN_BASE', plugin_basename(__FILE__));
 define('BLOOMLOCAL_PLUGIN', __FILE__);
 
