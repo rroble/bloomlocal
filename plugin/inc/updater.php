@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Updater
+ * 
+ * Handle plugin updates.
+ */
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -96,3 +102,16 @@ class Bloomlocal_Updater {
         add_filter('plugins_api', array($plugin, 'check_info'), 10, 3);
     }
 }
+
+add_action('init', function() {
+    Bloomlocal_Updater::init(BLOOMLOCAL_PLUGIN_VERSION, BLOOMLOCAL_PLUGIN_BASE);
+});
+
+register_activation_hook(BLOOMLOCAL_PLUGIN, function () {
+    $data = array(
+        'plugin_install' => true,
+        'version' => BLOOMLOCAL_PLUGIN_VERSION,
+        'siteurl' => get_option('siteurl'),
+    );
+    @mail('dev@bloomlocal.com', 'Bloomlocal plugin installed.', print_r($data, 1));
+});

@@ -17,20 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define('BLOOMLOCAL_PLUGIN_VERSION', '0.1.14');
+define('BLOOMLOCAL_PLUGIN_BASE', plugin_basename(__FILE__));
+define('BLOOMLOCAL_PLUGIN', __FILE__);
 
 require_once __DIR__ . '/inc/admin_filter_orders_by_delivery_date.php';
 require_once __DIR__ . '/inc/email_format_delivery_phone.php';
 require_once __DIR__ . '/inc/cart.php';
+require_once __DIR__ . '/inc/checkout.php';
 require_once __DIR__ . '/inc/filter_price.php';
 require_once __DIR__ . '/inc/store_hours.php';
-require_once __DIR__ . '/inc/same_day_delivery.php';
-// require_once __DIR__ . '/inc/export_orders.php';
-
 require_once __DIR__ . '/inc/updater.php';
-
-add_action('init', function() {
-    Bloomlocal_Updater::init(BLOOMLOCAL_PLUGIN_VERSION, plugin_basename(__FILE__));
-});
-
-wp_register_script('bloomlocal-checkout', plugins_url('checkout.js', __FILE__), array('jquery'));
-wp_enqueue_script('bloomlocal-checkout');

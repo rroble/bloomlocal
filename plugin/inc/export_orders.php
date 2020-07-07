@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * One click export orders by delivery date = today.
+ */
+
 add_filter('option_woocommerce-order-export-now', function ($options) {
     $options['statuses'] = array('wc-completed');
     $options['item_metadata'] = array('line_item:Delivery Date = '.date('d/m/Y'));

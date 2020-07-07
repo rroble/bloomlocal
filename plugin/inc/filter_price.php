@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Filter price
+ * 
+ * Fixes for filtering products by price/range.
+ */
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
