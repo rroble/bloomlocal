@@ -1,0 +1,3 @@
+cd cdn.eastbourneflowers.co.uk && ln -s ../public_html/wp-content/ . && ln -s ../public_html/wp-includes/ .
+
+test -f webp.list || find public_html | grep ".webp" | xargs -I {} echo {} > webp.list

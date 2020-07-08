@@ -189,7 +189,12 @@ jQuery(document).ready(function ($) {
         beforeShowDay: checkOutDisableDays,
         dateFormat: 'dd/mm/yy',
         minDate: (function () {
-            if (cutoff == '' || cutoff == -1 || ukHours < cutoff) {
+            if (cutoff == '' || cutoff == -1) {
+                return 0;
+            }
+
+            var co = parseInt(cutoff);
+            if (isNaN(co) || ukHours < co) {
                 return 0;
             }
 
