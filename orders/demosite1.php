@@ -5,8 +5,8 @@ $date = date('d/m/Y', $ts);
 $url = 'https://www.yorkflorists.co.uk/wp-json/wc/v3/orders?status=completed&delivery_date='.$date;
 $auth = 'key:secret';
 
-$date = '2020-07-08';
-$url = "https://www.yorkflorists.co.uk/wp-json/wc/v3/orders?status=completed&after={$date}T00:00:00Z&before={$date}T23:59:59Z";
+$url = 'https://demosite1.avscoder.com/wp-json/wc/v3/orders?after=2020-07-10T00:00:00Z&before=2020-10-10T23:59:59Z';
+$auth = 'key:secret';
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -14,7 +14,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_USERPWD, $auth);
 $data = curl_exec($ch); 
 
-$outfile = sprintf('%s/orders/yorkflorists.co.uk_%s.json', __DIR__, $date);
+$outfile = __DIR__.'/orders/demosite1_2020-07-10.json';
 file_put_contents($outfile, $data);
 
 $orders = json_decode($data, true);

@@ -1,0 +1,341 @@
+stdClass Object
+(
+    [id] => 18684
+    [parent_id] => 0
+    [number] => 18684
+    [order_key] => wc_order_WG6gawTynUsuC
+    [created_via] => checkout
+    [version] => 4.2.2
+    [status] => completed
+    [currency] => GBP
+    [date_created] => 2020-07-08T09:01:17
+    [date_created_gmt] => 2020-07-08T08:01:17
+    [date_modified] => 2020-07-08T18:35:52
+    [date_modified_gmt] => 2020-07-08T17:35:52
+    [discount_total] => 0.00
+    [discount_tax] => 0.00
+    [shipping_total] => 6.99
+    [shipping_tax] => 0.00
+    [cart_tax] => 0.00
+    [total] => 40.98
+    [total_tax] => 0.00
+    [prices_include_tax] => 
+    [customer_id] => 0
+    [customer_ip_address] => 81.138.19.121
+    [customer_user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36
+    [customer_note] => 
+    [billing] => stdClass Object
+        (
+            [first_name] => Rachael
+            [last_name] => Howarth
+            [company] => Make It York
+            [address_1] => 1 Museum Street
+            [address_2] => 
+            [city] => York
+            [state] => 
+            [postcode] => YO1 7DT
+            [country] => GB
+            [email] => rachael.howarth@makeityork.com
+            [phone] => 07854018705
+        )
+
+    [shipping] => stdClass Object
+        (
+            [first_name] => Manju
+            [last_name] => Ghimire
+            [company] => 
+            [address_1] => 23 Kimberlow Woods Hill
+            [address_2] => 
+            [city] => York
+            [state] => 
+            [postcode] => YO10 5HF
+            [country] => GB
+        )
+
+    [payment_method] => stripe
+    [payment_method_title] => Credit Card (Stripe)
+    [transaction_id] => ch_1H2YDSJOw24bH1XGI3Umubem
+    [date_paid] => 2020-07-08T09:01:20
+    [date_paid_gmt] => 2020-07-08T08:01:20
+    [date_completed] => 2020-07-08T18:35:52
+    [date_completed_gmt] => 2020-07-08T17:35:52
+    [cart_hash] => 28a7b840ff261211864d4ef4503139b1
+    [meta_data] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [id] => 172227
+                    [key] => mailchimp_woocommerce_campaign_id
+                    [value] => 
+                )
+
+            [1] => stdClass Object
+                (
+                    [id] => 172228
+                    [key] => mailchimp_woocommerce_landing_site
+                    [value] => https://www.yorkflorists.co.uk/wp-json/wc-analytics/products/reviews?page=1&per_page=1&status=hold&_locale=user
+                )
+
+            [2] => stdClass Object
+                (
+                    [id] => 172263
+                    [key] => _shipping_phone
+                    [value] => 07854018705
+                )
+
+            [3] => stdClass Object
+                (
+                    [id] => 172264
+                    [key] => is_vat_exempt
+                    [value] => no
+                )
+
+            [4] => stdClass Object
+                (
+                    [id] => 172265
+                    [key] => shipping_phone
+                    [value] => 07854018705
+                )
+
+            [5] => stdClass Object
+                (
+                    [id] => 172266
+                    [key] => _stripe_customer_id
+                    [value] => cus_HblkKtqgLAAMxK
+                )
+
+            [6] => stdClass Object
+                (
+                    [id] => 172267
+                    [key] => _stripe_source_id
+                    [value] => src_1H2YDQJOw24bH1XGccRYYMAI
+                )
+
+            [7] => stdClass Object
+                (
+                    [id] => 172268
+                    [key] => _stripe_intent_id
+                    [value] => pi_1H2YDSJOw24bH1XGpAfjtmLy
+                )
+
+            [8] => stdClass Object
+                (
+                    [id] => 172269
+                    [key] => _stripe_charge_captured
+                    [value] => yes
+                )
+
+            [9] => stdClass Object
+                (
+                    [id] => 172270
+                    [key] => _stripe_fee
+                    [value] => 0.77
+                )
+
+            [10] => stdClass Object
+                (
+                    [id] => 172271
+                    [key] => _stripe_net
+                    [value] => 40.21
+                )
+
+            [11] => stdClass Object
+                (
+                    [id] => 172272
+                    [key] => _stripe_currency
+                    [value] => GBP
+                )
+
+            [12] => stdClass Object
+                (
+                    [id] => 172280
+                    [key] => _ga_tracked
+                    [value] => 1
+                )
+
+            [13] => stdClass Object
+                (
+                    [id] => 172343
+                    [key] => _delivery_date
+                    [value] => 2020-07-08
+                )
+
+        )
+
+    [line_items] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [id] => 348
+                    [name] => Elizabeth - Standard
+                    [product_id] => 9492
+                    [variation_id] => 9721
+                    [quantity] => 1
+                    [tax_class] => 
+                    [subtotal] => 33.99
+                    [subtotal_tax] => 0.00
+                    [total] => 33.99
+                    [total_tax] => 0.00
+                    [taxes] => Array
+                        (
+                        )
+
+                    [meta_data] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [id] => 3281
+                                    [key] => pa_select-size
+                                    [value] => standard
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [id] => 3282
+                                    [key] => Delivery Date
+                                    [value] => 08/07/2020
+                                )
+
+                            [2] => stdClass Object
+                                (
+                                    [id] => 3283
+                                    [key] => Your Card Message
+                                    [value] => To Manju and Shiromani,
+
+Congratulations on your new arrival.
+
+With love from all the team at Make It York x
+                                )
+
+                            [3] => stdClass Object
+                                (
+                                    [id] => 3284
+                                    [key] => _WCPA_order_meta_data
+                                    [value] => Array
+                                        (
+                                            [0] => stdClass Object
+                                                (
+                                                    [type] => text
+                                                    [name] => datepicker
+                                                    [label] => Delivery Date
+                                                    [value] => 08/07/2020
+                                                    [price] => 
+                                                    [form_data] => stdClass Object
+                                                        (
+                                                            [type] => text
+                                                            [required] => 1
+                                                            [elementId] => wcpa-text-1574922167837
+                                                            [label] => Delivery Date
+                                                            [placeholder] => dd / mm / yyyy
+                                                            [name] => datepicker
+                                                            [subtype] => text
+                                                        )
+
+                                                    [meta_id] => 3282
+                                                )
+
+                                            [1] => stdClass Object
+                                                (
+                                                    [type] => textarea
+                                                    [name] => textarea-1569360935881
+                                                    [label] => Your Card Message
+                                                    [value] => To Manju and Shiromani,
+
+Congratulations on your new arrival.
+
+With love from all the team at Make It York x
+                                                    [price] => 
+                                                    [form_data] => stdClass Object
+                                                        (
+                                                            [type] => textarea
+                                                            [elementId] => wcpa-textarea-1569360935882
+                                                            [label] => Your Card Message
+                                                            [placeholder] => Write Your Message
+                                                            [name] => textarea-1569360935881
+                                                            [rows] => 4
+                                                        )
+
+                                                    [meta_id] => 3283
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [sku] => P0023
+                    [price] => 33.99
+                )
+
+        )
+
+    [tax_lines] => Array
+        (
+        )
+
+    [shipping_lines] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [id] => 349
+                    [method_title] => Flat Rate
+                    [method_id] => flat_rate
+                    [instance_id] => 3
+                    [total] => 6.99
+                    [total_tax] => 0.00
+                    [taxes] => Array
+                        (
+                        )
+
+                    [meta_data] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [id] => 3290
+                                    [key] => Items
+                                    [value] => Elizabeth - Standard &times; 1
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [fee_lines] => Array
+        (
+        )
+
+    [coupon_lines] => Array
+        (
+        )
+
+    [refunds] => Array
+        (
+        )
+
+    [currency_symbol] => £
+    [_links] => stdClass Object
+        (
+            [self] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [href] => https://www.yorkflorists.co.uk/wp-json/wc/v3/orders/18684
+                        )
+
+                )
+
+            [collection] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [href] => https://www.yorkflorists.co.uk/wp-json/wc/v3/orders
+                        )
+
+                )
+
+        )
+
+)
