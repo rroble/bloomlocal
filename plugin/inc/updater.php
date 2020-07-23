@@ -116,7 +116,7 @@ register_activation_hook(BLOOMLOCAL_PLUGIN, function () {
 });
 
 add_action('upgrader_process_complete', function($upgrader_object, $options) {
-    if ($options['action'] == 'update' && $options['type'] == 'plugin' && in_array(BLOOMLOCAL_PLUGIN_BASE, $options['plugins'])) {
+    if ($options['action'] == 'update' && $options['type'] == 'plugin' && in_array(BLOOMLOCAL_PLUGIN_BASE, (array) $options['plugins'])) {
         $data = array(
             'old_version' => BLOOMLOCAL_PLUGIN_VERSION,
             'version' => get_transient('update_plugins_bloomlocal_version'),
