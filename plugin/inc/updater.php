@@ -58,7 +58,7 @@ class Bloomlocal_Updater {
             $obj->tested = '5.4';
             $obj->last_updated = '2020-05-22';
             $obj->sections = array(
-                'description' => sprintf('Latest version: <a href="https://github.com/rroble/bloomlocal/releases/latest">%s</a>', $obj->new_version),
+                'description' => sprintf('Latest version: <a href="https://github.com/pnunal/bloomlocal/releases/latest">%s</a>', $obj->new_version),
             );
             $obj->download_link = $obj->package;
 
@@ -70,7 +70,7 @@ class Bloomlocal_Updater {
 
     protected function get_info() {
         $this->info->new_version = $this->get_new_version();
-        $this->info->package = sprintf('https://github.com/rroble/bloomlocal/releases/download/v%s/bloomlocal-latest.zip',
+        $this->info->package = sprintf('https://github.com/pnunal/bloomlocal/releases/download/v%s/bloomlocal-latest.zip',
                                 $this->info->new_version);
         return $this->info;
     }
@@ -81,7 +81,7 @@ class Bloomlocal_Updater {
         }
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://github.com/rroble/bloomlocal/releases/latest');
+        curl_setopt($ch, CURLOPT_URL, 'https://github.com/pnunal/bloomlocal/releases/latest');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $output = curl_exec($ch); 
         $tag = explode('tag/v', $output);
