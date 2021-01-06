@@ -85,14 +85,14 @@ add_filter( 'woocommerce_get_settings_products' , function ($settings, $current_
         ),
         array(
             'name' => __( 'Holiday', 'woocommerce'),
-            'type' => 'textarea',
+            'type' => 'text',
             'desc_tip' => true,
-            'default' => __( '[12, 25, 2019], [12, 26, 2019], [01, 01, 2020]'),
             'desc' => __( 'you must be folow this proccess to input holliday like                       [mm,dd,yyyy],[mm,dd,yyyy],[mm,dd,yyyy]'),
             'id'    => 'dp_holliday',
             'class' =>'form-control',
         ),
     );
+   
 
     $options = array(
         '-1' => __('Close', 'woocommerce'),
